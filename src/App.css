@@ -74,7 +74,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  
+
   /* Custom Travax colors */
   --travax-navy: #1A2B3C;
   --travax-charcoal: #343A40;
@@ -121,9 +121,23 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.logo-container {
+  flex-shrink: 0;
+  max-width: 120px;
+  /* Adjust width as desired */
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 
@@ -257,9 +271,8 @@
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.125rem;
   }
 }
-

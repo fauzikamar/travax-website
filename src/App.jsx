@@ -4,14 +4,14 @@ import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select';
-import { 
-  Plane, 
-  Users, 
-  Shield, 
-  BarChart3, 
-  CreditCard, 
-  Calendar, 
-  Database, 
+import {
+  Plane,
+  Users,
+  Shield,
+  BarChart3,
+  CreditCard,
+  Calendar,
+  Database,
   Settings,
   Mail,
   LogOut,
@@ -22,6 +22,7 @@ import {
   Trash2,
   RefreshCw
 } from 'lucide-react';
+import logo from './assets/logo_travax.png';
 import './App.css';
 
 // Landing Page Component
@@ -35,11 +36,11 @@ const LandingPage = () => {
       <nav className="navbar-sticky fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Plane className="h-8 w-8 text-travax-teal" />
-              <span className="text-2xl font-bold text-travax-navy font-montserrat">Travax</span>
+            <div className="logo-container">
+              <a href="">
+                <img className="logo" src={logo} alt="Logo" />
+              </a>
             </div>
-            
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/" className="text-travax-navy hover:text-travax-teal transition-colors">Home</Link>
@@ -47,14 +48,14 @@ const LandingPage = () => {
               <Link to="#modules" className="text-travax-navy hover:text-travax-teal transition-colors">Modules</Link>
               <Link to="#about" className="text-travax-navy hover:text-travax-teal transition-colors">About</Link>
               <Link to="#contact" className="text-travax-navy hover:text-travax-teal transition-colors">Contact</Link>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="border-travax-teal text-travax-teal hover:bg-travax-teal hover:text-white"
                 onClick={() => navigate('/login')}
               >
                 Login
               </Button>
-              <Button 
+              <Button
                 className="btn-primary"
                 onClick={() => navigate('/signup')}
               >
@@ -63,7 +64,7 @@ const LandingPage = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -81,14 +82,14 @@ const LandingPage = () => {
                 <Link to="#about" className="text-travax-navy hover:text-travax-teal transition-colors">About</Link>
                 <Link to="#contact" className="text-travax-navy hover:text-travax-teal transition-colors">Contact</Link>
                 <div className="flex space-x-4 pt-2">
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="border-travax-teal text-travax-teal hover:bg-travax-teal hover:text-white flex-1"
                     onClick={() => navigate('/login')}
                   >
                     Login
                   </Button>
-                  <Button 
+                  <Button
                     className="btn-primary flex-1"
                     onClick={() => navigate('/signup')}
                   >
@@ -111,17 +112,17 @@ const LandingPage = () => {
             A unified platform that streamlines data, verification, and team management for travel agencies.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="btn-primary text-lg px-8 py-4"
               onClick={() => navigate('/signup')}
             >
               Get Started Today
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-travax-navy"
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-travax-teal text-travax-teal bg-transparent"
               onClick={() => navigate('/login')}
             >
               Sign In
@@ -141,7 +142,7 @@ const LandingPage = () => {
               Streamline your travel business operations with our comprehensive data management platform.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="module-card text-center">
               <CardHeader>
@@ -193,7 +194,7 @@ const LandingPage = () => {
               Everything you need to manage your travel business in one integrated platform.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="module-card">
               <CardHeader>
@@ -255,9 +256,9 @@ const LandingPage = () => {
           <p className="text-xl mb-8 max-w-2xl mx-auto font-roboto">
             Join thousands of travel professionals who trust Travax for their data management needs.
           </p>
-          <Button 
-            size="lg" 
-            className="btn-secondary text-lg px-8 py-4"
+          <Button
+            size="lg"
+            className="btn-secondary text-lg px-10 py-4"
             onClick={() => navigate('/signup')}
           >
             Start Your Free Trial
@@ -268,13 +269,13 @@ const LandingPage = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            {/* <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <Plane className="h-6 w-6 text-travax-teal" />
               <span className="text-xl font-bold font-montserrat">Travax</span>
-            </div>
+            </div> */}
             <p className="text-gray-400 font-roboto">
-              © 2024 Travax. All rights reserved.
+              © 2025 Travax. All rights reserved.
             </p>
           </div>
         </div>
@@ -312,7 +313,7 @@ const SignUpPage = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button 
+            <Button
               className="w-full btn-primary"
               onClick={() => navigate('/login')}
             >
@@ -347,7 +348,7 @@ const SignUpPage = () => {
                 type="email"
                 className="form-input"
                 value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
               />
             </div>
@@ -359,7 +360,7 @@ const SignUpPage = () => {
                 type="password"
                 className="form-input"
                 value={formData.password}
-                onChange={(e) => setFormData({...formData, password: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 required
               />
             </div>
@@ -371,7 +372,7 @@ const SignUpPage = () => {
                 type="password"
                 className="form-input"
                 value={formData.confirmPassword}
-                onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
                 required
               />
             </div>
@@ -383,8 +384,8 @@ const SignUpPage = () => {
             After signing up, check your email for a verification link to activate your company account.
           </p>
           <div className="text-center mt-4">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               onClick={() => navigate('/login')}
               className="text-travax-teal hover:text-travax-navy"
             >
@@ -442,7 +443,7 @@ const LoginPage = () => {
                 type="email"
                 className="form-input"
                 value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
               />
             </div>
@@ -454,7 +455,7 @@ const LoginPage = () => {
                 type="password"
                 className="form-input"
                 value={formData.password}
-                onChange={(e) => setFormData({...formData, password: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 required
               />
             </div>
@@ -468,8 +469,8 @@ const LoginPage = () => {
             </Button>
           </div>
           <div className="text-center mt-2">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               onClick={() => navigate('/signup')}
               className="text-travax-teal hover:text-travax-navy"
             >
@@ -530,8 +531,8 @@ const AdminDashboard = () => {
               <Link to="/admin-dashboard" className="text-travax-navy hover:text-travax-teal font-roboto">Dashboard</Link>
               <Link to="#" className="text-travax-navy hover:text-travax-teal font-roboto">Invite Employees</Link>
               <Link to="#" className="text-travax-navy hover:text-travax-teal font-roboto">Settings</Link>
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 onClick={() => navigate('/')}
                 className="text-travax-navy hover:text-travax-teal"
               >
@@ -575,7 +576,7 @@ const AdminDashboard = () => {
                     type="email"
                     className="form-input"
                     value={newInvite.email}
-                    onChange={(e) => setNewInvite({...newInvite, email: e.target.value})}
+                    onChange={(e) => setNewInvite({ ...newInvite, email: e.target.value })}
                     placeholder="Enter employee email"
                     required
                   />
@@ -584,7 +585,7 @@ const AdminDashboard = () => {
                   <label className="block text-sm font-medium text-travax-navy mb-2 font-roboto">
                     Select Role
                   </label>
-                  <Select value={newInvite.role} onValueChange={(value) => setNewInvite({...newInvite, role: value})}>
+                  <Select value={newInvite.role} onValueChange={(value) => setNewInvite({ ...newInvite, role: value })}>
                     <SelectTrigger className="form-input">
                       <SelectValue placeholder="Choose a role" />
                     </SelectTrigger>
@@ -701,8 +702,8 @@ const DataEntryDashboard = () => {
             </div>
             <div className="flex items-center space-x-6">
               <span className="text-travax-navy font-roboto">Agent Dashboard</span>
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 onClick={() => navigate('/')}
                 className="text-travax-navy hover:text-travax-teal"
               >
@@ -718,7 +719,7 @@ const DataEntryDashboard = () => {
         <h1 className="text-3xl font-bold text-travax-navy mb-8 font-montserrat">
           Data Entry Dashboard
         </h1>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Card className="module-card">
             <CardHeader>
@@ -727,7 +728,7 @@ const DataEntryDashboard = () => {
               <CardDescription className="font-roboto">Create a new data entry</CardDescription>
             </CardHeader>
           </Card>
-          
+
           <Card className="module-card">
             <CardHeader>
               <Calendar className="h-8 w-8 text-travax-teal mb-2" />
@@ -735,7 +736,7 @@ const DataEntryDashboard = () => {
               <CardDescription className="font-roboto">Manage customer bookings</CardDescription>
             </CardHeader>
           </Card>
-          
+
           <Card className="module-card">
             <CardHeader>
               <Users className="h-8 w-8 text-travax-teal mb-2" />
@@ -764,8 +765,8 @@ const VerificationDashboard = () => {
             </div>
             <div className="flex items-center space-x-6">
               <span className="text-travax-navy font-roboto">HQ Dashboard</span>
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 onClick={() => navigate('/')}
                 className="text-travax-navy hover:text-travax-teal"
               >
@@ -781,7 +782,7 @@ const VerificationDashboard = () => {
         <h1 className="text-3xl font-bold text-travax-navy mb-8 font-montserrat">
           Verification & Management Dashboard
         </h1>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Card className="module-card">
             <CardHeader>
@@ -790,7 +791,7 @@ const VerificationDashboard = () => {
               <CardDescription className="font-roboto">Verify and validate data entries</CardDescription>
             </CardHeader>
           </Card>
-          
+
           <Card className="module-card">
             <CardHeader>
               <BarChart3 className="h-8 w-8 text-travax-teal mb-2" />
@@ -798,7 +799,7 @@ const VerificationDashboard = () => {
               <CardDescription className="font-roboto">View comprehensive reports</CardDescription>
             </CardHeader>
           </Card>
-          
+
           <Card className="module-card">
             <CardHeader>
               <Settings className="h-8 w-8 text-travax-teal mb-2" />
